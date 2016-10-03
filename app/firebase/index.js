@@ -2,11 +2,11 @@ import firebase from 'firebase';
 
 try {
   var config = {
-    apiKey: "AIzaSyCe8u62hCKjbDwgaNrdMWfwrB6UmzvXHVU",
-    authDomain: "osx-cms.firebaseapp.com",
-    databaseURL: "https://osx-cms.firebaseio.com",
-    storageBucket: "osx-cms.appspot.com",
-    messagingSenderId: "302724994288"
+    apiKey: process.env.API_KEY,
+    authDomain: process.env.AUTH_DOMAIN,
+    databaseURL: process.env.DATABASE_URL,
+    storageBucket: process.env.STORAGE_BUCKET
+
   };
   firebase.initializeApp(config);
 } catch(e) {
