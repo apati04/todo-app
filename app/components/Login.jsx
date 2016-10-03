@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import * as actions from '../actions/actions';
 
-export default class Login extends Component {
+
+export class Login extends Component {
+
   render() {
     return (
       <div>
@@ -11,7 +15,7 @@ export default class Login extends Component {
             <div className="callout callout-auth">
               <h3>Login</h3>
               <p>Login with Github Account!</p>
-              <button className="button">Login With Github</button>
+              <button className="button" onClick={() => this.props.startLogin()}>Login With Github</button>
             </div>
           </div>
         </div>
@@ -19,3 +23,5 @@ export default class Login extends Component {
     )
   }
 }
+
+export default connect(null, actions)(Login);

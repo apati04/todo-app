@@ -12,5 +12,6 @@ try {
 } catch(e) {
 
 }
+export var githubProvider = new firebase.auth.GithubAuthProvider();
 export const firebaseRef = firebase.database().ref();
 export default firebase;
