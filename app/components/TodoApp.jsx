@@ -6,7 +6,7 @@ import TodoList from 'TodoList'
 import AddTodo from 'AddTodo';
 import TodoSearch from 'TodoSearch';
 
-export class TodoApp extends Component {
+class TodoApp extends Component {
 
   render() {
     return (
@@ -15,7 +15,7 @@ export class TodoApp extends Component {
           <a href="#"
             onClick={(e)=>{
               e.preventDefault;
-              this.props.startLogout()}}>Logout</a>
+            this.props.startLogout()}}>Logout</a>
         </div>
 
         <h1 className="page-title">Todo App</h1>
