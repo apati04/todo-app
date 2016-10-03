@@ -3,7 +3,7 @@ var ReactDOM = require('react-dom');
 var { Provider } = require('react-redux');
 var { hashHistory} = require('react-router');
 
-var TodoAPI = require('TodoAPI');
+
 var actions = require('actions');
 var store = require('configureStore').configure();
 import router from 'app/router/';
