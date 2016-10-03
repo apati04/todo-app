@@ -56,7 +56,7 @@ export var startAddTodos = () => {
       var todos = snapshot.val() || {};
       var parsedTodos = [];
 
-      Object.keys(todos).forEach((todoId) => {
+      return Object.keys(todos).forEach((todoId) => {
         parsedTodos.push({
           id: todoId,
           ...todos[todoId]
@@ -90,7 +90,16 @@ export var startToggleTodo = (id, completed) => {
   };
 };
 
-
+//**************************************************
+//**************************************************
+// synchronous action for login
+// since it it not async, no need to return a function
+export var login = (uid) => {
+  return {
+    type: 'LOGIN',
+    uid
+  }
+}
 // async action for login
 export var startLogin= () => {
   return (dispatch,getState) =>{
@@ -101,15 +110,27 @@ export var startLogin= () => {
     })
   }
 }
+//**************************************************
+//**************************************************
 
 
-
+//**************************************************
+//**************************************************
+// synchronous action for logout
+// since it it not async, no need to return a function
+export var logout = () => {
+  return {
+    type: 'LOGOUT'
+  }
+}
 // async action for logout
 export var startLogout = () => {
-  
+
   return (dispatch,getState) =>{
     return firebase.auth().signOut().then( () => {
       console.log('Logged out son!');
     })
   }
 }
+//**************************************************
+//**************************************************

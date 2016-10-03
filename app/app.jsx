@@ -13,8 +13,10 @@ import firebase from 'app/firebase/'
 // auth() returns an obj with many methods
 firebase.auth().onAuthStateChanged(user => {
   if (user) {
+    store.dispatch(actions.login(user.uid))
     hashHistory.push('/todos');
   } else {
+    store.dispatch(actions.logout());
     hashHistory.push('/');
   }
 })

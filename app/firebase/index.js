@@ -10,7 +10,7 @@ try {
   };
   firebase.initializeApp(config);
 } catch(e) {
-
+  console.log('error init: ', e);
 }
 export var githubProvider = new firebase.auth.GithubAuthProvider();
 export const firebaseRef = firebase.database().ref();
